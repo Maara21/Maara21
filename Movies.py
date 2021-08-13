@@ -43,4 +43,60 @@ Output:
      Kumar ,kalvi
      Ravi  ,Kompan
      Pavi  ,kutti
-     Maara ,theri     
+     Maara ,theri
+#Enter thé movie name 
+
+#Enter actor name and director 
+
+# year of passing 
+# awards
+
+  
+
+import mysql.connector 
+
+  
+
+  
+
+mydb = mysql.connector.connect( 
+
+  Movies = "Kumar-kalvi,Ravi-Kompan,Pavi-kutti,Mar
+aara-theri",
+
+
+  Director = "attlee", 
+
+  Year = "2021", 
+
+  database = "database_name"
+)  
+
+  
+
+mycursor = mydb.cursor()
+sql = "INSERT INTO Movies (actor, director) VALUES (%s, %s)"
+
+val = ("kumar-kalvi,attle,21,2)
+      ("Ravi -kompan,attle ,21,2)
+    
+
+
+
+  
+mycursor.execute(sql, val) 
+mydb.commit() 
+
+  
+
+print(mycursor.rowcount, "details inserted") 
+
+  
+# disconnecting from server 
+mydb.close() 
+Output:
+   Name director actor awared year 
+   Kalvi  attlee  Kumar   2   2021
+   Ravi   attlee  Kompan  2    2021
+  
+
